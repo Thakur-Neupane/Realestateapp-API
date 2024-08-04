@@ -16,6 +16,10 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"));
 
+// Routes
+app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
+
 // ErrorHandler
 
 app.get("/", (req, res, next) => {
@@ -38,9 +42,6 @@ app.use((error, req, res, next) => {
     message: error.message,
   });
 });
-
-app.use("/api/user", userRouter);
-app.use("/api/auth", authRouter);
 
 app.listen(PORT, (error) => {
   error
