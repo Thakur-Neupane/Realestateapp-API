@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import userRouter from "./routes/userRouter.js";
 import authRouter from "./routes/authRoute.js";
+import listingRouter from "./routes/listingRoute.js";
 import { connectDb } from "./config/dbConfig.js";
 import cors from "cors";
 import morgan from "morgan";
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, "/client/dist")));
 // Routes
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/listing", listingRouter);
 
 // Health Check Route
 app.get("/", (req, res) => {
