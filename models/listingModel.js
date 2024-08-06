@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const listingSchema = new mongoose.Schema(
   {
     name: {
@@ -33,7 +34,7 @@ const listingSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-    Parking: {
+    parking: {
       type: Boolean,
       required: true,
     },
@@ -45,7 +46,6 @@ const listingSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-
     imageUrls: {
       type: Array,
       required: true,
@@ -55,9 +55,7 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 const Listing = mongoose.model("Listing", listingSchema);
